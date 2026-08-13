@@ -1,0 +1,25 @@
+import java.util.*;
+public class NewClass
+{
+    public static void main(String[] args)
+    {
+        String str = "MEET AT GATE";
+        char[] arr = str.toCharArray();
+        for(int i = 0; i < arr.length; i++)
+        {
+            if(arr[i] >= 'A' && arr[i] <= 'Z')
+            {
+                arr[i] = (char)(arr[i] + 3);
+                 if (arr[i] > 'Z') 
+                 {
+                    arr[i] = (char)(arr[i] - 26);
+                }
+            }
+        }
+
+        System.out.println(arr);
+    }
+}
+
+Output :
+PHHW DW JDWH
