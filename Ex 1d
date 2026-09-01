@@ -1,0 +1,26 @@
+public class VigenereCipher {
+    public static void main(String[] args) {
+        String plaintext = "ATTACK AT DAWN";
+        String keyword = "SECURE";
+
+        StringBuilder result = new StringBuilder();
+        keyword = keyword.toUpperCase();
+        plaintext = plaintext.toUpperCase();
+        int keyIndex = 0;
+
+        for (char c : plaintext.toCharArray()) {
+            if (c >= 'A' && c <= 'Z') {
+                char shift = keyword.charAt(keyIndex % keyword.length());
+                char encryptedChar = (char) ((c + shift - 2 * 'A') % 26 + 'A');
+                result.append(encryptedChar);
+                keyIndex++;
+            } else {
+                result.append(c);
+            }
+        }
+
+        System.out.println("Ciphertext: " + result.toString());
+    }
+}
+OutPut:
+Ciphertext: SXVUTO SX FUNR
